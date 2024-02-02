@@ -18,18 +18,18 @@ public class RobotController {
     public ResponseEntity<String> getRobotData() {
         WebClient webClient = WebClient.create();
 
-        // Use the correct method chaining for WebClient
+        // Method chaining for WebClient
         String result = webClient.get()
                 .uri(apiUrl)
                 .retrieve()
                 .bodyToMono(String.class)
-                .block(); // blocking call, in a real application consider using reactive programming
+                .block(); // blocking call
 
         System.out.println("----------------");
         System.out.println(result);
         System.out.println("-----------");
 
-        // Return the JSON in the HTTP response
+        // Returning the JSON in the HTTP response
         return ResponseEntity.ok()
                 .header("Content-Type", "application/json")
                 .body(result);
