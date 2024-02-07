@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 import org.springframework.beans.factory.parsing.Location;
 
 @Entity
-@Table(name = "survivors")
+@Table(name = "survivor")
 public class Survivors {
 
     @Id
@@ -13,19 +13,19 @@ public class Survivors {
     private String name;
     private int age;
     private String gender;
+    @Column(name = "infected")
+    private boolean infected;
 
-    @Column(nullable = true)
     private boolean water;
-    @Column(nullable = true)
+
     private boolean food;
-    @Column(nullable = true)
+
     private boolean medication;
-    @Column(nullable = true)
+
     private boolean ammunition;
 
     @Embedded
     private Location lastLocation;
-    private boolean infected;
 
     // Constructors, Getters, and Setters
 
@@ -132,4 +132,5 @@ public class Survivors {
             this.longitude = longitude;
         }
     }
+
 }

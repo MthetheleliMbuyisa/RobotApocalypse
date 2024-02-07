@@ -23,7 +23,7 @@ public class RobotController {
                 .uri(apiUrl)
                 .retrieve()
                 .bodyToMono(String.class)
-                .block(); // blocking call
+                .block(); // blocking call, reactive programming
 
         System.out.println("----------------");
         System.out.println(result);

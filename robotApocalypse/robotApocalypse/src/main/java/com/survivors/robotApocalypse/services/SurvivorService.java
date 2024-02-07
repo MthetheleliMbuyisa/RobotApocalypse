@@ -2,7 +2,6 @@ package com.survivors.robotApocalypse.services;
 
 import com.survivors.robotApocalypse.Entity.Survivors;
 import com.survivors.robotApocalypse.Repository.SurvivorRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -13,14 +12,16 @@ public class SurvivorService {
 
     private final SurvivorRepository survivorRepository;
 
-    @Autowired
+
     public SurvivorService(SurvivorRepository survivorRepository) {
+
         this.survivorRepository = survivorRepository;
     }
 
 
     // Creating a new survivor
     public Survivors createSurvivor(Survivors survivors) {
+
         return survivorRepository.save(survivors);
     }
 
@@ -45,15 +46,4 @@ public class SurvivorService {
         }
         return null;
     }
-
-    // Delete all survivors
-    public void deleteAllSurvivors() {
-        survivorRepository.deleteAll();
-    }
-
-    // Delete survivor by ID
-    public void deleteSurvivor(Long id) {
-        survivorRepository.deleteById(id);
-    }
-
 }

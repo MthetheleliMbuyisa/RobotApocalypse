@@ -39,21 +39,8 @@ public class SurvivorControllers {
     }
 
     // Update survivor by ID
-    @PutMapping("/{id}")
+    @PutMapping("/survivors/{id}")
     public Survivors updateSurvivor(@PathVariable Long id, @RequestBody Survivors survivorsDetails) {
         return survivorService.updateSurvivor(id, survivorsDetails);
-    }
-
-    // Delete all survivors
-    @DeleteMapping
-    public String deleteAllSurvivors() {
-        survivorService.deleteAllSurvivors();
-        return "All survivors have been deleted successfully.";
-    }
-
-    // Delete survivor by ID
-    @DeleteMapping("/{id}")
-    public void deleteSurvivor(@PathVariable Long id) {
-        survivorService.deleteSurvivor(id);
     }
 }
