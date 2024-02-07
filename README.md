@@ -31,17 +31,20 @@ Use Postman for unit testing, Content of a request – Body, Sub-option – Raw,
 The parameters are entered as follows.
 
 {
-        "id": 3,
-        "name": "Thembelani",
-        "age": 28,
+        "id": 2,
+        "name": "Mbuyisa",
+        "age": 29,
         "gender": "male",
-        "infected": false,
+        "infected": true,
         "water": true,
         "food": false,
         "medication": false,
-        "ammunition": false,
-        "lastLocation": {"longitude":"23.98", "latitude":"38.89"}
-    }
+        "ammunition": true,
+        "lastLocation": {
+                "longitude": "23.98",
+                "latitude": "38.89"
+                        }
+}
 
 
 
