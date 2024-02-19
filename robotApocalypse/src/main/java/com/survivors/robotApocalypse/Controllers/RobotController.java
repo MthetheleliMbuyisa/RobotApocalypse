@@ -16,12 +16,17 @@ import java.util.List;
 @RequestMapping("/robotAPI")
 public class RobotController {
 
-    @Autowired
+    
     private RobotsService robotsService;
 
     @Value("${external.api.url}")
     private String apiUrl;
-
+    
+    @Autowired
+    public RobotController(RobotsService robotsService) {
+        this.robotsService = robotsService;
+    }
+    
     @GetMapping("/original_robot_Data")
     public ResponseEntity<String> getApocalypesRobotData() {
         WebClient webClient = WebClient.create();
