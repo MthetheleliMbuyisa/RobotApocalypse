@@ -4,10 +4,6 @@ public class ApocalypseRobots {
     private String model;
     private String category;
 
-    public ApocalypseRobots(){
-
-    }
-
     public ApocalypseRobots(String model, String category) {
         this.model = model;
         this.category = category;
